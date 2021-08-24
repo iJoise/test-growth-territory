@@ -1,102 +1,42 @@
 .side {
-  flex: 0 0 300px;
-  padding: 25px 0 0 30px;
+  position: fixed;
   height: calc(100vh - 80px);
-  background: rgba(255, 255, 255, 0.05);
+  width: 300px;
+  top: 80px;
+  left: 0;
+  background-color: #fff;
+  padding: 25px 0 0 30px;
   box-shadow: 0 0 5px rgba(2, 0, 96, 0.25);
-  overflow-y: auto;
+  transition: all 0.3s ease;
 
-  &::-webkit-scrollbar {
+  &__open {
+    position: absolute;
+    bottom: 10px;
+    right: -10px;
+    height: 50px;
+    width: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #4F27BF;
     display: none;
   }
 
-  a {
-    color: #1C1C1E;
-    word-wrap: break-word;
+  @media (max-width: 768px) {
+    left: -300px;
+    padding: 25px 0 0 0;
   }
 
   h3 {
     font-size: 20px;
     line-height: 24px;
   }
-
-  &__nav {
-    padding-top: 35px;
-  }
-
-  &__list {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    display: block;
-    cursor: pointer;
-
-    div {
-      display: flex;
-      align-items: center;
-
-      a, p {
-        position: relative;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 20px;
-        width: 100%;
-
-      }
-
-      span {
-        margin-right: 20px;
-        margin-left: 20px;
-      }
-    }
-  }
-
-  &__settings {
-    cursor: pointer;
-  }
-
 }
 
-.collapsed {
-  padding-left: 55px;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  height: auto;
-  max-height: 0;
-
-
-  &__list {
-
-    &__menu {
-      display: flex;
-
-      a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 20px;
-        width: 100%;
-      }
-    }
-  }
-
-  &__active {
-    max-height: 200px;
-  }
+.visible {
+  display: block;
 }
 
-.activeArrow {
-  transform: rotate(180deg);
-}
-
-.activeLink {
-  &:before {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 37px;
-    top: 0;
-    right: 0;
-    background: #4F27BF;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
+.active {
+  left: 0;
+  padding: 25px 0 0 30px;
 }

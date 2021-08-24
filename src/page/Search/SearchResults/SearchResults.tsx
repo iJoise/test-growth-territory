@@ -2,12 +2,9 @@ import React from "react";
 import st from "./SearchResults.module.scss";
 import {Title} from "../../../components/Title";
 
-type SearchResultsPropsType = {
-
-}
 
 
-export const SearchResults: React.FC<SearchResultsPropsType> = ({children}) => {
+export const SearchResults: React.FC = ({children}) => {
 
    return (
       <div className={st.results}>

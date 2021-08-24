@@ -8,27 +8,27 @@ import {SubTitle} from "../../components/SubTitle";
 import {Address} from "./SearchResults/Address/Address";
 import {useSelector} from "react-redux";
 import {AppRootStateType} from "../../store/store";
-import {SuggestionsType} from "../../api/address-api";
-
-type SearchPagePropsType = {}
+import {SuggestionsTypeContainsId} from "../../store/address-reducer";
 
 
-export const SearchPage: React.FC<SearchPagePropsType> = () => {
+export const SearchPage: React.FC = () => {
 
-   const address = useSelector<AppRootStateType, SuggestionsType[]>(state => state.address.addressList)
+   const address = useSelector<AppRootStateType, SuggestionsTypeContainsId[]>(state => state.address.addressList)
 
-   console.log(address)
    return (
       <div className={com.container}>
          <section className={st.search}>
             <Title>Поиск адресов</Title>
             <SubTitle>Введите интересующий вас адрес</SubTitle>
             <SearchBlock/>
-            <SearchResults>
-               {
-                  address.map(a => <Address address={a.value}/>)
-               }
-            </SearchResults>
+            {
+               !!address.length
+               && <SearchResults>
+                  {
+                     address.map(a => <Address address={a.value} key={a.id}/>)
+                  }
+               </SearchResults>
+            }
          </section>
       </div>
    )

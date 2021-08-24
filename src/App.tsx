@@ -7,19 +7,19 @@ import {MainPage} from "./page/Main/MainPage";
 import {SearchPage} from "./page/Search/SearchPage";
 
 export const App = () => {
-  return (
-   <div className={st.wrapper}>
-      <Header/>
-      <main className={st.page}>
-         <Sidebar/>
-         <div className={st.wrapper__main}>
-            <Switch>
-            <Route exact path="/" render={() => <MainPage/>}/>
-            <Route path="/address" render={() => <SearchPage/>}/>
-         </Switch>
-         </div>
-      </main>
-   </div>
-  );
+   return (
+      <div className={st.wrapper}>
+         <Header/>
+         <main className={st.page}>
+            <Sidebar/>
+            <div className={st.wrapper__main}>
+               <Switch>
+                  <Route exact path="/" render={() => <MainPage/>}/>
+                  <Route path="/address" render={() => <SearchPage/>}/>
+               </Switch>
+            </div>
+         </main>
+      </div>
+   );
 }
 
