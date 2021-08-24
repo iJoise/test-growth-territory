@@ -2,6 +2,8 @@ import React from "react";
 import st from "./Main.module.scss";
 import com from "../../style/common.module.scss";
 import { NavLink } from "react-router-dom";
+import {Title} from "../../components/Title";
+import {SubTitle} from "../../components/SubTitle";
 
 
 type MainPagePropsType = {}
@@ -12,8 +14,8 @@ export const MainPage: React.FC<MainPagePropsType> = () => {
    return (
       <div className={com.container}>
          <section className={st.main}>
-            <h2 className={com.title}>Новости</h2>
-            <h3 className={com.subTitle}>Обновление CRM до 1.2</h3>
+            <Title>Новости</Title>
+            <SubTitle>Обновление CRM до 1.2</SubTitle>
             <p>
                В новой версии 1.2 реализован уникальный функционал: улучшенная обработка смет и баз, учитываются все
                последние
