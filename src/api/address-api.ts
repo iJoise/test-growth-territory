@@ -18,7 +18,7 @@ export const addressApi = {
    }
 }
 
-export type SuggestionsType = {
+export interface SuggestionsType {
    "value": string,
    "unrestricted_value": string,
    "data": {
