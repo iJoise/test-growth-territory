@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/test-growth-territory/static/css/main.ea3b2c72.chunk.css",
-    "main.js": "/test-growth-territory/static/js/main.4b842cb4.chunk.js",
-    "main.js.map": "/test-growth-territory/static/js/main.4b842cb4.chunk.js.map",
+    "main.js": "/test-growth-territory/static/js/main.a86a404a.chunk.js",
+    "main.js.map": "/test-growth-territory/static/js/main.a86a404a.chunk.js.map",
     "runtime-main.js": "/test-growth-territory/static/js/runtime-main.3ee1197d.js",
     "runtime-main.js.map": "/test-growth-territory/static/js/runtime-main.3ee1197d.js.map",
-    "static/js/2.eff277dc.chunk.js": "/test-growth-territory/static/js/2.eff277dc.chunk.js",
-    "static/js/2.eff277dc.chunk.js.map": "/test-growth-territory/static/js/2.eff277dc.chunk.js.map",
+    "static/js/2.f3e6798a.chunk.js": "/test-growth-territory/static/js/2.f3e6798a.chunk.js",
+    "static/js/2.f3e6798a.chunk.js.map": "/test-growth-territory/static/js/2.f3e6798a.chunk.js.map",
     "index.html": "/test-growth-territory/index.html",
     "static/css/main.ea3b2c72.chunk.css.map": "/test-growth-territory/static/css/main.ea3b2c72.chunk.css.map",
-    "static/js/2.eff277dc.chunk.js.LICENSE.txt": "/test-growth-territory/static/js/2.eff277dc.chunk.js.LICENSE.txt"
+    "static/js/2.f3e6798a.chunk.js.LICENSE.txt": "/test-growth-territory/static/js/2.f3e6798a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3ee1197d.js",
-    "static/js/2.eff277dc.chunk.js",
+    "static/js/2.f3e6798a.chunk.js",
     "static/css/main.ea3b2c72.chunk.css",
-    "static/js/main.4b842cb4.chunk.js"
+    "static/js/main.a86a404a.chunk.js"
   ]
 }
