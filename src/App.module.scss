@@ -1,0 +1,31 @@
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &__main {
+    height: calc(100vh - 80px);
+    width: 100%;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #4F27BF;
+      border-radius: 5px;
+    }
+  }
+}
+
+.page {
+  flex: 1 1 auto;
+  padding-top: 80px;
+  display: flex;
+
+  &__body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
