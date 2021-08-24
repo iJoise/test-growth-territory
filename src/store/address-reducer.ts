@@ -1,20 +1,8 @@
 import {AppThunkType} from "./store";
 import {addressApi, SuggestionsType} from "../api/address-api";
 import {v1} from "uuid";
+import {ACTION_ADDRESS} from "../constants/constants";
 
-enum ACTION_APP {
-   SET_ADDRESS_INFO = 'addressReducer/SET_ADDRESS_INFO',
-   SET_IS_FETCHING = 'addressReducer/SET_IS_FETCHING'
-}
-
-export interface SuggestionsTypeContainsId extends SuggestionsType {
-   id: string
-}
-
-type InitialStateType = {
-   addressList: SuggestionsTypeContainsId[]
-   isFetching: boolean
-}
 
 const initialState: InitialStateType = {
    addressList: [],
@@ -23,12 +11,12 @@ const initialState: InitialStateType = {
 
 export const addressReducer = (state: InitialStateType = initialState, action: AppActionType): InitialStateType => {
    switch (action.type) {
-      case ACTION_APP.SET_ADDRESS_INFO:
+      case ACTION_ADDRESS.SET_ADDRESS_INFO:
          return {
             ...state,
             addressList: action.payload.map(a => ({...a, id: v1()}))
          };
-      case ACTION_APP.SET_IS_FETCHING:
+      case ACTION_ADDRESS.SET_IS_FETCHING:
          return {
             ...state,
             ...action.payload
@@ -39,9 +27,9 @@ export const addressReducer = (state: InitialStateType = initialState, action: A
 }
 
 export const setAddress = (address: SuggestionsType[]) =>
-   ({type: ACTION_APP.SET_ADDRESS_INFO, payload: address} as const);
+   ({type: ACTION_ADDRESS.SET_ADDRESS_INFO, payload: address} as const);
 export const setIsFetching = (isFetching: boolean) =>
-   ({type: ACTION_APP.SET_IS_FETCHING, payload: {isFetching}} as const);
+   ({type: ACTION_ADDRESS.SET_IS_FETCHING, payload: {isFetching}} as const);
 
 
 export const getAddressInfo = (value: string): AppThunkType => async dispatch => {
@@ -52,7 +40,7 @@ export const getAddressInfo = (value: string): AppThunkType => async dispatch =>
    } catch (err) {
       console.warn(err);
    } finally {
-      dispatch(setIsFetching(false))
+      dispatch(setIsFetching(false));
    }
 }
 
@@ -63,4 +51,12 @@ export type AppActionType =
    | SetAddressActionType
    | SetIsFetchingActionType
 
+export interface SuggestionsTypeContainsId extends SuggestionsType {
+   id: string
+}
+
+type InitialStateType = {
+   addressList: SuggestionsTypeContainsId[]
+   isFetching: boolean
+}
 

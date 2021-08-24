@@ -12,6 +12,7 @@ import {ArrowSvg} from "../../../assets/icon/sidebar/ArrowSVG";
 import {UserSvg} from "../../../assets/icon/common/UserSvg";
 import {FinSvg} from "../../../assets/icon/sidebar/FinSVG";
 import {ExitSvg} from "../../../assets/icon/sidebar/ExitSVG";
+import {PATH} from "../../../constants/constants";
 
 //p вместо тега а или NavLink здесь в качестве заглушки
 
@@ -31,13 +32,13 @@ export const Navigation: React.FC = () => {
          <li className={st.navigation__list}>
             <div>
                <HomeSVG/>
-               <NavLink exact to='/' activeClassName={st.activeLink}>Главная</NavLink>
+               <NavLink exact to={PATH.MAIN} activeClassName={st.activeLink}>Главная</NavLink>
             </div>
          </li>
          <li className={st.navigation__list}>
             <div>
                <SearchSvg fill='black'/>
-               <NavLink to='/address' activeClassName={st.activeLink}>Поиск адресов</NavLink>
+               <NavLink to={PATH.ADDRESS} activeClassName={st.activeLink}>Поиск адресов</NavLink>
             </div>
          </li>
          <li className={st.navigation__list}>
