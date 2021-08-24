@@ -1,10 +1,10 @@
 import React from 'react';
 import st from './App.module.scss';
-import {Header} from "./components/Header/Header";
-import {Sidebar} from "./components/Sidebar/Sidebar";
+import {Header} from "./page/Header/Header";
+import {Sidebar} from "./page/Sidebar/Sidebar";
 import {Route, Switch} from "react-router-dom";
-import {MainPage} from "./components/Main/MainPage";
-import {SearchPage} from "./components/Search/SearchPage";
+import {MainPage} from "./page/Main/MainPage";
+import {SearchPage} from "./page/Search/SearchPage";
 
 export const App = () => {
   return (
