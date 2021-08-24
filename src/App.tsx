@@ -2,7 +2,7 @@ import React from 'react';
 import st from './App.module.scss';
 import {Header} from "./page/Header/Header";
 import {Sidebar} from "./page/Sidebar/Sidebar";
-import {Route, Switch} from "react-router-dom";
+import {Redirect, Route, Switch} from "react-router-dom";
 import {MainPage} from "./page/Main/MainPage";
 import {SearchPage} from "./page/Search/SearchPage";
 
@@ -16,6 +16,7 @@ export const App = () => {
                <Switch>
                   <Route exact path="/" render={() => <MainPage/>}/>
                   <Route path="/address" render={() => <SearchPage/>}/>
+                  <Redirect to='/'/>
                </Switch>
             </div>
          </main>
