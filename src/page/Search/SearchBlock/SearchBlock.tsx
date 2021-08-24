@@ -1,11 +1,13 @@
 import React, {useState} from "react";
 import {Field} from "../../../components/Field/Field";
 import {Button} from "../../../components/Button/Button";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {getAddressInfo} from "../../../store/address-reducer";
+import {AppRootStateType} from "../../../store/store";
 
 
 export const SearchBlock: React.FC = () => {
+   const isFetching = useSelector<AppRootStateType, boolean>(state => state.address.isFetching)
    const dispatch = useDispatch()
    const [city, setCity] = useState('');
 
@@ -22,7 +24,7 @@ export const SearchBlock: React.FC = () => {
          />
          <Button
             onClick={searchCityHandler}
-            disabled={false}
+            disabled={isFetching}
          >Поиск</Button>
       </div>
    )
